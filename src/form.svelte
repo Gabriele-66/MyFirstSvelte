@@ -1,61 +1,56 @@
 <script>
-	let questions = [
-		{ id: 1, text: `Where did you go to school?` },
-		{ id: 2, text: `What is your mother's name?` },
-		{ id: 3, text: `What is another personal fact that an attacker could easily find with Google?` }
-	];
-
-	let selected;
-
-	let answer = '';
-
+	let Fname ='';
+	let Lname ='';
+	let Cf ='';
+	let Sex ='';
+	
 	function handleSubmit() {
-		alert(`answered question ${selected.id} (${selected.text}) with "${answer}"`);
+		alert(`First Name ${Fname},Last Name ${Lname},C.F. ${Cf},Sex ${Sex}`);
 	}
 </script>
 
 <h2 style="text-align:center">My Form</h2>
 
 <form on:submit|preventDefault={handleSubmit}>
-
     <div>
         <div class="form-group">
-			<input type="text" class="form-control" placeholder="First name" required>
+			<input type="text" class="form-control" placeholder="First name" bind:value={Fname}>
 		</div>
 		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Last name" required>
+			<input type="text" class="form-control" placeholder="Last name" bind:value={Lname}>
 		</div>
     </div>
     
     <div>
         <div>
-            <select bind:value={selected} on:change="{() => answer = ''}">
-            {#each questions as question}
-                <option value={question}>
-                    {question.text}
-                </option>
-            {/each}
-        </select>
-        <input bind:value={answer}>
+            <select bind:value={Sex} required>
+				<option  disabled>Please choose...</option>
+				<option >Male</option>
+				<option >Famale</option>
+        	</select>
         </div>
         <div class="form-group">
-			<input type="text" class="form-control" placeholder="Last name" required>
+			<input type="text" class="form-control" placeholder="C.F." bind:value={Cf}>
 		</div>
     </div>
-	
-<!-- pernome e cognome <button class="btn btn-full" on:click={() => submitted = true}>Continue</button> -->
-	
-    <button disabled={!answer} type=submit>
+
+    <button disabled={!Fname || !Lname || !Sex || !Cf} type=submit>
 		Submit
 	</button>
 </form>
 
-<p>selected question {selected ? selected.id : '[waiting...]'}</p>
 
 <style>
 	form {
 		display: block;
 		width: 500px;
 		max-width: 100%;
+		text-align: center;
+		margin:0 auto;
+		
+	}
+
+	input{
+		text-align: center;
 	}
 </style>
