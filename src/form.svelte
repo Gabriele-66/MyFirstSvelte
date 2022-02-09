@@ -47,7 +47,7 @@
 		max-width: 100%;
 		text-align: center;
 		margin:0 auto;
-		
+		padding-top: 20%;
 	}
 
 	input{
