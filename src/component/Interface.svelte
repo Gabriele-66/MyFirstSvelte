@@ -9,17 +9,40 @@
     }
 </script>
 
-<MyForm style="float:left; display:block; width:300px; height:300px;" on:add={handleAdd}/>
-<MyTable style="float:rigth; display:block; width:300px; height:300px;" bind:people/>
+<div class="ext">
+    <div class="sin">
+        <MyForm on:add={handleAdd}/>
+    </div>
+
+    <div class="sin mytable">
+        <MyTable  bind:people/>
+    </div>
+</div>
+
+
 
 <style>
-    .MyTable{
-        text-align: center;
+    /* row justify-content-around */
+    .bar{
+        overflow-x: hidden;
     }
+    .ext {
+		display: block;
+		max-width: 100%;
+		text-align: center;
+		margin:0 auto;
+		padding-top: 10%;
+        padding-left: 15%
+        ;
+	}
+    .sin{
+        display: block;
+        width: 400px;
+        height: 400px;
+        float: left;
+    }  
+    .mytable{
+        padding-left:100px;
+    }
+    
 </style>
-
-<div style="float:left; display:block; width:300px; height:300px; background-color:grey;"></div>
-
-<div style="float:left; display:block; width:300px; height:300px; background-color:green;"></div>
-
-<div style="clear:both;"></div>
