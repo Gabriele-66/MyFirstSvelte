@@ -41,8 +41,25 @@
 {/if}
 
 <style>
+
+    button{
+		outline: none;
+		cursor: pointer;
+		text-decoration: none;
+		padding: 10px 20px;
+		border-radius: 10%;
+		background-color: rgb(81, 255, 0);
+		border: solid 2px #a30000;
+		margin: 0 auto;
+		text-align: center;
+	}
+
     p{
         color: red;
+        text-align: center;
+    }
+
+    th,td{
         text-align: center;
     }
 </style>
