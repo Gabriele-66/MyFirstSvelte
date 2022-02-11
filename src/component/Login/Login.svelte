@@ -5,18 +5,24 @@
     let usrNmC = false;
     let pwdC = false;
     function handleSubmit() {
+        sub = true;
+        if(usrNm==""){
+            usrNmC=true;
+        } 
+        else{
+            usrNmC=false;
+        } 
+        if(pwd==""){
+            pwdC=true;
+        }
+        else{
+            pwdC=false;
+        }
         if(usrNm!="" && pwd!=""){
             alert(`UserName: ${usrNm}, Password: ${pwd}`);
             usrNmC=false;
             pwdC=false;
         }
-        sub = true;
-
-        if(usrNm=="")   usrNmC=true;
-        else usrNmC=false;
-
-        if(pwd=="")   pwdC=true;
-        else pwdC=false;
 	}
 </script>
 
