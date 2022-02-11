@@ -25,17 +25,25 @@ import { createEventDispatcher } from "svelte";
 <form on:submit|preventDefault={handleSubmit}>
 	<div class="container">
 		<div class="row">
-			<input class="col-sm" type="text" placeholder="First name" bind:value={Fname}>
-			<input class="col-sm" type="text" placeholder="Last name" bind:value={Lname}>
+			<div class="col-sm">
+				<input style="width:100%" type="text" placeholder="First name" bind:value={Fname}>
+			</div>
+			<div class="col-sm">
+				<input style="width:100%" type="text" placeholder="Last name" bind:value={Lname}>
+			</div>
 		</div>
 		
 		<div class="row">
-			<select class="col-sm" bind:value={Sex}>
-				<option value="" selected>Please choose...</option>
-				<option value="M">Male</option>
-				<option value="F">Female</option>
-			</select>
-			<input class="col-sm" type="text" placeholder="C.F." bind:value={Cf}>
+			<div class="col-sm">
+				<select style="width:100%" bind:value={Sex}>
+					<option value="" selected>Please choose...</option>
+					<option value="M">Male</option>
+					<option value="F">Female</option>
+				</select>
+			</div>
+			<div class="col-sm">
+				<input style="width:100%" type="text" placeholder="C.F." bind:value={Cf}>
+			</div>
 		</div>
 
 		<div style="text-align:center">
