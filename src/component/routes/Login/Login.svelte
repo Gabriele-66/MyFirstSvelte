@@ -1,4 +1,6 @@
 <script>
+    import {push, pop, replace} from 'svelte-spa-router'
+
     let usrNm = "";
     let pwd = "";
     let sub = false;
@@ -19,7 +21,8 @@
             pwdC=false;
         }
         if(usrNm!="" && pwd!=""){
-            alert(`UserName: ${usrNm}, Password: ${pwd}`);
+            //alert(`UserName: ${usrNm}, Password: ${pwd}`);
+            push('/Interface');
             usrNmC=false;
             pwdC=false;
         }
@@ -57,10 +60,6 @@
 <style>
     p{
         color:#c00
-    }
-    #login{
-        background-image: url("login.jpg");
-        background-size: cover;
     }
 
     #login .container #login-row #login-box {

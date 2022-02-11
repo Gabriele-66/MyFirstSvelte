@@ -1,11 +1,10 @@
 <script>
-	import Interface from './component/routes/table-Data/Interface.svelte'
-	import Login from './component/routes/Login/Login.svelte'
+	import Home from './component/routes/Home.svelte'
+	import Router from 'svelte-spa-router';
+	// Importa tutto
+	import routes from './routes';
 </script>
 
 <h1 style="text-align:center">My First Svelte</h1>
-
-<!-- <br>
-<Interface/> -->
-
-<Login/>
+<Home/>
+<Router {routes} />
