@@ -11,8 +11,6 @@
 <!-- {JSON.stringify(people)}
 {people.length} -->
 
-<h2 style="text-align:center">My Table</h2>
-
 {#if people.length>0}
     <table class="table table-bordered table-dark">
         <thead>

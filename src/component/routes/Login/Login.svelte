@@ -3,11 +3,10 @@
 
     let usrNm = "";
     let pwd = "";
-    let sub = false;
     let usrNmC = false;
     let pwdC = false;
     function handleSubmit() {
-        sub = true;
+        
         if(usrNm==""){
             usrNmC=true;
         } 
@@ -30,11 +29,10 @@
 </script>
 
 <div id="login">
-    <h3 class="text-center text-white">Login form</h3>
     <div class="container">
         <div id="login-row" class="row justify-content-center align-items-center">
             <div id="login-box" class="col-">
-                <div id="login-form" class="form" class:sub action="" method="post">
+                <div id="login-form" class="form" action="" method="post">
                     <h3 class="text-center text-info">Login to Your Account</h3>
                     <div class="form-group">
                         <label for="username" class="text-info">Username:</label>
@@ -75,11 +73,11 @@
         padding: 17px;
     }
 
-    .sub input:focus:invalid {
+    input:focus:invalid {
 		outline: 1px solid #c00;
 	}
 
-    .sub input:invalid {
+    input:invalid {
 		border: 1px solid #c00;
 	}
 

@@ -3,3 +3,9 @@
 </script>
 
 <p on:click={()=>push('/')}>HOME</p>
+
+<style>
+    p{
+        cursor:pointer
+    }
+</style>

@@ -19,8 +19,6 @@ import { createEventDispatcher } from "svelte";
 	}
 </script>
 
-<h2 style="text-align:center">My Form</h2>
-
 
 <form on:submit|preventDefault={handleSubmit}>
 	<div class="container">
