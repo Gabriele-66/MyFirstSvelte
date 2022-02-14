@@ -15,7 +15,7 @@ import { createEventDispatcher } from "svelte";
 			cf:Cf,
 			sex:Sex
 		})
-		console.log(`First Name ${Fname}, Last Name ${Lname}, C.F. ${Cf}, Sex ${Sex}`);
+		//console.log(`First Name ${Fname}, Last Name ${Lname}, C.F. ${Cf}, Sex ${Sex}`);
 	}
 </script>
 

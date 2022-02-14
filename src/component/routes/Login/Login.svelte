@@ -1,12 +1,16 @@
 <script>
     import {push, pop, replace} from 'svelte-spa-router'
+    import Mymodal from './ModalError.svelte'
+    import {token} from '../../../Stores.js'
+ //   import { get } from 'svelte/store'
 
     let usrNm = "";
     let pwd = "";
-    let usrNmC = false;
-    let pwdC = false;
+    $: usrNmC = false;
+    $: pwdC = false;
+    let modalSwitch = false;
+
     function handleSubmit() {
-        
         if(usrNm==""){
             usrNmC=true;
         } 
@@ -20,8 +24,24 @@
             pwdC=false;
         }
         if(usrNm!="" && pwd!=""){
-            //alert(`UserName: ${usrNm}, Password: ${pwd}`);
-            push('/Interface');
+
+            axios.post("login.json")
+            .then(function(response){
+                //console.log(response)
+                if(response.data.token){
+                    //console.log(response.data.token);
+                    token.set(response.data.token);
+                    //console.log(get(token))
+                    push('/Interface');
+                }
+                else{
+                    modalSwitch = true;
+                }
+            })
+            .catch(function(error){
+                console.log(error)
+            })
+
             usrNmC=false;
             pwdC=false;
         }
@@ -53,6 +73,9 @@
     </div>
 </div>
 
+{#if modalSwitch}
+<Mymodal/>
+{/if}
 
 
 <style>

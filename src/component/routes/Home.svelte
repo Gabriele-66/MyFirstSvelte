@@ -3,7 +3,7 @@
 </script>
 
 <p on:click={()=>push('/')}>HOME</p>
-
+<!-- <p on:click={()=>pop()}>HOME</p> -->
 <style>
     p{
         cursor:pointer
