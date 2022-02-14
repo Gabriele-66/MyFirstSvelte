@@ -10,6 +10,10 @@
     $: pwdC = false;
     let modalSwitch = false;
 
+    function closeModal() {
+        modalSwitch = false;
+    }
+
     function handleSubmit() {
         if(usrNm==""){
             usrNmC=true;
@@ -36,6 +40,7 @@
                 }
                 else{
                     modalSwitch = true;
+                    console.log(modalSwitch)
                 }
             })
             .catch(function(error){
@@ -74,7 +79,7 @@
 </div>
 
 {#if modalSwitch}
-<Mymodal/>
+<Mymodal {modalSwitch} on:closeModal={closeModal}/>
 {/if}
 
 
